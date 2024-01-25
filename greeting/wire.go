@@ -1,6 +1,9 @@
 package greeting
 
-import(
-	"fmt"
-)
+import "github.com/google/wire"
+
+func InitializeGreetingService() *GreetingService {
+	wire.Build(NewGreetingService)
+	return &GreetingService{}
+}
 
